@@ -34,7 +34,7 @@ puts 'Adding git aliases (co, br, ci, and st)...'
 `git config --global alias.st status`
 
 puts 'Binding up/down (and ^P/^N) to search command history...'
-File.open('~/.bashrc', 'a') do |f|
+File.open(ENV['HOME'] + '/.bashrc', 'a') do |f|
   f.puts %q(bind '"\e[A": history-search-backward')
   f.puts %q(bind '"\e[B": history-search-forward')
   f.puts %q(bind '"\020": history-search-backward')
