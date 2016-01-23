@@ -27,11 +27,19 @@ puts 'Installing Bash it...'
 `~/.bash_it/install.sh`
 `echo "export BASH_IT_THEME='envy'" >> ~/.bashrc`
 
-puts 'Adding git aliases (co, br, ci, and st)...'
+puts 'Installing git-duet...'
+`brew tap git-duet/tap`
+`brew install git-duet`
+
+puts 'Adding git aliases (co, br, ci, st, dci, drv, dmg, lola)...'
 `git config --global alias.co checkout`
 `git config --global alias.br branch`
 `git config --global alias.ci commit`
 `git config --global alias.st status`
+`git config --global alias.dci duet-commit`
+`git config --global alias.drv duet-revert`
+`git config --global alias.dmg duet-merge`
+`git config --global alias.lola log --graph --decorate --oneline --all`
 
 puts 'Binding up/down (and ^P/^N) to search command history...'
 File.open(ENV['HOME'] + '/.bashrc', 'a') do |f|
